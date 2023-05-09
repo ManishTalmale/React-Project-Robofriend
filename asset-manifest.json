@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Project-Robofriend/static/css/main.b4d9603f.css",
+    "main.js": "/React-Project-Robofriend/static/js/main.77a20fc7.js",
+    "index.html": "/React-Project-Robofriend/index.html",
+    "main.b4d9603f.css.map": "/React-Project-Robofriend/static/css/main.b4d9603f.css.map",
+    "main.77a20fc7.js.map": "/React-Project-Robofriend/static/js/main.77a20fc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4d9603f.css",
+    "static/js/main.77a20fc7.js"
+  ]
+}
