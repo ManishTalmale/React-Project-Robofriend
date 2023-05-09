@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import CardList from "./CardList";
+import SearchBox from './SearchBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+
+ const App=()=> {
+   const[robots,setRobots]=useState([])
+   const[searchfield,setSearchfeild]=useState('')
+
+    const onSearchChange=(event)=>{
+        setSearchfeild(event.target.value) 
+    }
+   
+
+    useEffect(()=>{
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response=>response.json())
+        .then(products=>setRobots(products))
+    })
+        const filterRobots=robots.filter(robots=>{
+            return robots.name.toLowerCase().includes(searchfield.toLowerCase())
+        });
+       
+        return ( 
+            <div className="tc">
+                <h1>ROBOFRIENDS</h1>
+                <SearchBox searchfield={onSearchChange}/>
+                <CardList robots={filterRobots} />
+                 {/* <CardList robots={filterEmail} /> */}
+            </div>
+        )
+    }
 
 export default App;
